@@ -1,20 +1,29 @@
 BUILD_DIR ?= build
 QMK_KEYBOARDS = crkbd utu nammu atreus-acris atreus-astar
 QMK_TARGETS = $(patsubst %,$(BUILD_DIR)/luakh_rev1_%.hex,$(QMK_KEYBOARDS))
+QMK_DIR = qmk
 
-all: $(QMK_TARGETS)
+all: link $(QMK_TARGETS)
 
-$(BUILD_DIR)/luakh_rev1_%.hex: qmk/.build/luakh_rev1_%.hex qmk
+$(BUILD_DIR)/luakh_rev1_%.hex: $(QMK_DIR)/luakh_rev1_%.hex
 	mkdir -p $(@D)
 	cp $< $@
 
-qmk/.build/luakh_rev1_%.hex: luakh/keymaps/%/keymap.c qmk
-	make -C qmk luakh:$*
+$(QMK_DIR)/luakh_rev1_%.hex: $(wildcard luakh/keymaps/%/*)
+	$(info [QMK] $* because $?)
+	$(MAKE) -C $(QMK_DIR) luakh:$*
 
-qmk/keyboards/luakh: luakh
+link: $(QMK_DIR)
+link: $(QMK_DIR)/keyboards/luakh
+$(QMK_DIR)/keyboards/luakh: luakh
 	ln -sr $< $@
 
-qmk:
-	git clone --recursive --depth 1 https://github.com/qmk/qmk_firmware qmk
+$(QMK_DIR):
+	git clone --recursive --depth 1 https://github.com/qmk/qmk_firmware $(QMK_DIR)
 
-.PHONY: all
+clean:
+	rm -rf $(BUILD_DIR)
+	$(MAKE) -C $(QMK_DIR) clean
+	rm $(QMK_DIR)/*.hex
+
+.PHONY: all link

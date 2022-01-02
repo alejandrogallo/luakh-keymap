@@ -36,5 +36,11 @@ mkShell {
     # Prevent the avr-gcc wrapper from picking up host GCC flags
     # like -iframework, which is problematic on Darwin
     unset NIX_CFLAGS_COMPILE_FOR_TARGET
+    [[ -d env ]] || {
+      echo creating virtualenv
+      virtualenv env
+      ./env/bin/pip install qmk
+      . ./env/bin/activate
+    }
   '';
 }
