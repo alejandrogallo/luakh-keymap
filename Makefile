@@ -1,5 +1,7 @@
+LUAKH_ROOT := $(PWD)
+export LUAKH_ROOT
 BUILD_DIR ?= build
-QMK_KEYBOARDS = crkbd utu nammu atreus-acris atreus-astar
+QMK_KEYBOARDS = crkbd utu nammu atreus-acris atreus-astar crapple-II
 QMK_TARGETS = $(patsubst %,$(BUILD_DIR)/luakh_rev1_%.hex,$(QMK_KEYBOARDS))
 QMK_DIR = qmk
 
