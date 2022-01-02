@@ -1,2 +1,4 @@
-JOYSTICK_ENABLE = analog
+JOYSTICK_ENABLE = yes
+JOYSTICK_DRIVER = analog # or 'digital'
+
 POINTING_DEVICE_ENABLE = yes
