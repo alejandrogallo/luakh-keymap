@@ -40,6 +40,7 @@ mkShell {
       echo creating virtualenv
       virtualenv env
       ./env/bin/pip install qmk
+    } && {
       . ./env/bin/activate
     }
   '';
