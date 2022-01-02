@@ -24,12 +24,13 @@ $(QMK_DIR)/keyboards/luakh: luakh
 	ln -sr $< $@
 
 $(QMK_DIR):
-	git clone --recursive --depth 1 https://github.com/qmk/qmk_firmware $(QMK_DIR)
+	# -b 6f043c54
+	git clone --shallow-submodules --recursive --depth 1 https://github.com/qmk/qmk_firmware $(QMK_DIR)
 
 clean:
-	rm -rf $(BUILD_DIR)
-	$(MAKE) -C $(QMK_DIR) clean
-	rm $(QMK_DIR)/*.hex
+	-rm -rf $(BUILD_DIR)
+	-$(MAKE) -C $(QMK_DIR) clean
+	-rm $(QMK_DIR)/*.hex
 
 tags:
 	ctags -R $(QMK_DIR)/quantum $(QMK_DIR)/tmk_core
