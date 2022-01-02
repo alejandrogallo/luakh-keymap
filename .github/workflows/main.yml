@@ -33,16 +33,7 @@ jobs:
     - name: Build Keymaps
       run: nix-shell qmk.nix --run 'make'
 
-    - name: Zip keymaps
-      run: zip -r keymaps.zip build
-
-    - name: upload linux artifact
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-      with:
-        #upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: keymaps.zip
-        asset_name: Keymaps
-        asset_content_type: application/zip
-
+    - name: Build dist
+      run: |
+        nix-shell qmk.nix --run 'make dist'
+        tar -czf dist.tar.gz dist
