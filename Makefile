@@ -36,7 +36,7 @@ $(BUILD_DIR)/luakh_rev1_%.hex: $(QMK_DIR)/luakh_rev1_%.hex
 	mkdir -p $(@D)
 	cp $< $@
 
-$(QMK_DIR)/luakh_rev1_%.hex: luakh/keymaps/%/*
+$(QMK_DIR)/luakh_rev1_%.hex: luakh/keymaps/%/* $(wildcard luakh/*)
 	$(info [QMK] $* because $?)
 	$(MAKE) -C $(QMK_DIR) luakh:$*
 

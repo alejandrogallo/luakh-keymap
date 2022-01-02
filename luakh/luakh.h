@@ -116,7 +116,7 @@ enum {
 #define KC_UMLAUT RALT(KC_U)
 
 #define \
-LUAKH_SYMBOLS_1    SCLN, COMM, DOT, SLSH, PIPE, /*|*/D_ENT, 7, 8, 9, DOT
+LUAKH_SYMBOLS_1    EXLM, AT, HASH, DOLLAR, PIPE, /*|*/D_ENT, 7, 8, 9, DOT
 #define \
 LUAKH_SYMBOLS_2  LCBR, RCBR, QUOT, GRAVE, BSLS, /*|*/ BSPC, 4, 5, 6, EQL
 #define \
