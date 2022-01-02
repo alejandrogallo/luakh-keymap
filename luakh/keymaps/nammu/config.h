@@ -24,10 +24,11 @@
 //#define RGBLIGHT_HUE_STEP 8
 //#define RGBLIGHT_SAT_STEP 8
 //#define RGBLIGHT_VAL_STEP 8
-#define RGBLIGHT_ANIMATIONS
+// TODO: SET RGB LIGHTING with low memory footprint
+// #define RGBLIGHT_ANIMATIONS
 
 #undef DESCRIPTION
-#define DESCRIPTION     what else do you need
+#define DESCRIPTION nammu
 
 /* Encoder pins */
 #define ENCODERS_PAD_A { B3 }

@@ -5,11 +5,14 @@ QMK_DIR = qmk
 
 all: link $(QMK_TARGETS)
 
+.PHONY: $(QMK_KEYBOARDS)
+%: $(BUILD_DIR)/luakh_rev1_%.hex
+
 $(BUILD_DIR)/luakh_rev1_%.hex: $(QMK_DIR)/luakh_rev1_%.hex
 	mkdir -p $(@D)
 	cp $< $@
 
-$(QMK_DIR)/luakh_rev1_%.hex: $(wildcard luakh/keymaps/%/*)
+$(QMK_DIR)/luakh_rev1_%.hex: luakh/keymaps/%/*
 	$(info [QMK] $* because $?)
 	$(MAKE) -C $(QMK_DIR) luakh:$*
 
@@ -25,5 +28,8 @@ clean:
 	rm -rf $(BUILD_DIR)
 	$(MAKE) -C $(QMK_DIR) clean
 	rm $(QMK_DIR)/*.hex
+
+tags:
+	ctags -R $(QMK_DIR)/quantum $(QMK_DIR)/tmk_core
 
 .PHONY: all link

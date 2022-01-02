@@ -18,7 +18,7 @@
 #undef PRODUCT
 #define PRODUCT         acris keyboard
 #undef DESCRIPTION
-#define DESCRIPTION     acris keyboard blahblahblah
+#define DESCRIPTION     acris
 
 /*
  * RGB CONFIGURATION

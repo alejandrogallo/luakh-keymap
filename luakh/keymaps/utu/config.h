@@ -20,3 +20,5 @@
 
 #define MASTER_LEFT
 
+#undef DESCRIPTION
+#define DESCRIPTION utu

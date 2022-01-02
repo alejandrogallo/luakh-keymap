@@ -117,10 +117,10 @@ enum MyCombos {
   , COMBO_LENGTH
 };
 
-uint16_t COMBO_LEN = COMBO_LENGTH;
+const uint16_t COMBO_LEN = COMBO_LENGTH;
 
 
-combo_t key_combos[]
+const combo_t key_combos[]
   = { [ENTER_COMBO] = COMBO(enter_combo,   KC_ENT)
     , [ENTER_L_COMBO] = COMBO(enter_l_combo, KC_ENT)
     , [ESC_COMBO] = COMBO(esc_combo,     KC_ESC)
