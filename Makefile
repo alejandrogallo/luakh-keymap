@@ -5,7 +5,29 @@ QMK_KEYBOARDS = crkbd utu nammu atreus-acris atreus-astar crapple-II
 QMK_TARGETS = $(patsubst %,$(BUILD_DIR)/luakh_rev1_%.hex,$(QMK_KEYBOARDS))
 QMK_DIR = qmk
 
+DIST_DIR = ./dist
+
 all: link $(QMK_TARGETS)
+
+# DIST =======================================================================
+DIST_FILES = \
+  $(patsubst %,$(DIST_DIR)/%.hex,$(QMK_KEYBOARDS)) \
+  $(DIST_DIR)/eeprom-lefthand.eep \
+  $(DIST_DIR)/eeprom-righthand.eep \
+  $(DIST_DIR)/flash \
+
+dist: $(DIST_FILES)
+$(DIST_DIR)/%.hex: $(BUILD_DIR)/luakh_rev1_%.hex
+	@mkdir -p $(@D)
+	@cp -v $< $@
+$(DIST_DIR)/eeprom-%.eep: $(QMK_DIR)/quantum/split_common/eeprom-%.eep
+	@mkdir -p $(@D)
+	@cp -v $< $@
+$(DIST_DIR)/flash: tools/flash
+	@mkdir -p $(@D)
+	@cp -v $< $@
+# DIST +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 .PHONY: $(QMK_KEYBOARDS)
 %: $(BUILD_DIR)/luakh_rev1_%.hex
@@ -25,7 +47,12 @@ $(QMK_DIR)/keyboards/luakh: luakh
 
 $(QMK_DIR):
 	# -b 6f043c54
-	git clone --shallow-submodules --recursive --depth 1 https://github.com/qmk/qmk_firmware $(QMK_DIR)
+	git clone \
+		--shallow-submodules \
+		--recursive \
+		--depth 1 \
+		https://github.com/qmk/qmk_firmware \
+		$(QMK_DIR)
 
 clean:
 	-rm -rf $(BUILD_DIR)
