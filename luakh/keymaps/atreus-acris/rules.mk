@@ -2,3 +2,4 @@ JOYSTICK_ENABLE = yes
 JOYSTICK_DRIVER = analog # or 'digital'
 
 POINTING_DEVICE_ENABLE = yes
+RGBLIGHT_ENABLE = yes

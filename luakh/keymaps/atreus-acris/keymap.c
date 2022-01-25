@@ -11,10 +11,12 @@ joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
     [1] = JOYSTICK_AXIS_IN(F4, 0, 504, 1023), // 10 bit adc
 };
 
+#define KC_RGBMF RGB_MODE_FORWARD
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LUAKH_kc(QWERTY,
-                    RST, NO, NO,          NO, NO, NO),
+                    RST, NO, NO,          NO, LMOD, LTOG),
 
   [SYMBOLS] = LUAKH_kc(SYMBOLS,
                        RST, NO, NO,          NO, NO, NO),
