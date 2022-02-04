@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # script adapted from the sources in qmk
 
-: ${hex:=${1}}
-: ${side:=${2:-left}}
+: ${hex:=${1:-`read -e -p "Flash file: " hex; echo $hex`}}
+: ${side:=${2:-`select side in left right none; do echo $side; break; done`}}
 
 cat <<EOF
 

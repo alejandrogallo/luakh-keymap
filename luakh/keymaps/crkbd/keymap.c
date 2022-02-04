@@ -13,8 +13,8 @@ enum {
 joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
                           // -127 +127 Genauigkeit
 #ifdef APPLE_EXTENDED
-    [AXIS_Y] = JOYSTICK_AXIS_IN(B4, 0, 450, 1024), // 10 bit adc
-    [AXIS_X] = JOYSTICK_AXIS_IN(B5, 0, 450, 1024), // 10 bit adc
+    [AXIS_Y] = JOYSTICK_AXIS_IN(B4, 0, 480, 1024), // 10 bit adc
+    [AXIS_X] = JOYSTICK_AXIS_IN(B5, 0, 480, 1024), // 10 bit adc
 #endif
 
 };
