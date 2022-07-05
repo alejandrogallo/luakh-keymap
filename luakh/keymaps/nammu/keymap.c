@@ -31,20 +31,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
+  bool _clockwise = !clockwise;
   if (IS_LAYER_ON(BASE)) {
-    if (clockwise) {
+    if (_clockwise) {
         tap_code(KC_PGDN);
     } else {
         tap_code(KC_PGUP);
     }
   } else if (IS_LAYER_ON(SYMBOLS)) {
-     if (clockwise) {
+     if (_clockwise) {
       tap_code(KC_AUDIO_VOL_UP);
     } else {
       tap_code(KC_AUDIO_VOL_DOWN);
     }
  } else if (IS_LAYER_ON(MOVEMENT)) {
-    if (clockwise) {
+    if (_clockwise) {
       tap_code(KC_MS_WH_DOWN);
     } else {
       tap_code(KC_MS_WH_UP);
