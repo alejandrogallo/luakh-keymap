@@ -33,3 +33,5 @@
 /* Encoder pins */
 #define ENCODERS_PAD_A { B3 }
 #define ENCODERS_PAD_B { B2 }
+#define ENCODERS_PAD_A_RIGHT { B2 }
+#define ENCODERS_PAD_B_RIGHT { B3 }

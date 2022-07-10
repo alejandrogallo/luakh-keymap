@@ -5,8 +5,8 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LUAKH_kc(QWERTY,
-                              NO,          NO,
-                     RST, NO, NO,          NO, NO, NO),
+                                LVAD,          LVAI,
+                     RST, LHUD, LHUI,          LSAD, LSAI, NO),
 
   [SYMBOLS] = LUAKH_kc(SYMBOLS,
                                NO,          NO,
@@ -32,24 +32,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
   bool _clockwise = !clockwise;
-  if (IS_LAYER_ON(BASE)) {
-    if (_clockwise) {
-        tap_code(KC_PGDN);
-    } else {
-        tap_code(KC_PGUP);
+  if (index == 0) {
+    if (IS_LAYER_ON(BASE)) {
+      if (_clockwise) {
+          tap_code(KC_PGDN);
+      } else {
+          tap_code(KC_PGUP);
+      }
+    } else if (IS_LAYER_ON(SYMBOLS)) {
+       if (_clockwise) {
+        tap_code(KC_AUDIO_VOL_UP);
+      } else {
+        tap_code(KC_AUDIO_VOL_DOWN);
+      }
+   } else if (IS_LAYER_ON(MOVEMENT)) {
+      if (_clockwise) {
+        tap_code(KC_MS_WH_DOWN);
+      } else {
+        tap_code(KC_MS_WH_UP);
+      }
     }
-  } else if (IS_LAYER_ON(SYMBOLS)) {
-     if (_clockwise) {
-      tap_code(KC_AUDIO_VOL_UP);
-    } else {
-      tap_code(KC_AUDIO_VOL_DOWN);
+  } else {
+    if (IS_LAYER_ON(BASE)) {
+      if (_clockwise) {
+          tap_code(KC_UP);
+      } else {
+          tap_code(KC_DOWN);
+      }
+    } else if (IS_LAYER_ON(SYMBOLS)) {
+       if (_clockwise) {
+        tap_code(KC_MEDIA_NEXT_TRACK);
+      } else {
+        tap_code(KC_MEDIA_PREV_TRACK);
+      }
+   } else if (IS_LAYER_ON(MOVEMENT)) {
+      if (_clockwise) {
+        tap_code(KC_RIGHT);
+      } else {
+        tap_code(KC_LEFT);
+      }
     }
- } else if (IS_LAYER_ON(MOVEMENT)) {
-    if (_clockwise) {
-      tap_code(KC_MS_WH_DOWN);
-    } else {
-      tap_code(KC_MS_WH_UP);
-    }
+
   }
   return true;
 }
