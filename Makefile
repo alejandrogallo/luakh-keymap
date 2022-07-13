@@ -52,7 +52,7 @@ $(QMK_DIR):
 		--shallow-submodules \
 		--recursive \
 		--depth 1 \
-		--b $(QMK_TAG) \
+		-b $(QMK_TAG) \
 		https://github.com/qmk/qmk_firmware \
 		$(QMK_DIR)
 
