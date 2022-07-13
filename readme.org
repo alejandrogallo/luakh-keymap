@@ -1,2 +1,5 @@
+#+attr_org: :width 100%
+#+attr_html: :width 100%
+#+attr_md: :width 100%
 [[file:logo.svg]]
 
