@@ -128,7 +128,7 @@ const combo_t key_combos[]
     , [TAB_COMBO] = COMBO(tab_combo,     KC_TAB)
     , [TAB_L_COMBO] = COMBO(tab_l_combo,   KC_TAB)
     , [BSPC_COMBO] = COMBO(bspc_combo,    KC_BSPC)
-    , [BSPC_L_COMBO] = COMBO(bspc_l_combo,  KC_BSPC)
+    , [BSPC_L_COMBO] = COMBO(bspc_l_combo,  MO(MOVEMENT))
 
     // modifiers ==================================
     //
@@ -179,7 +179,7 @@ const combo_t key_combos[]
       unregister_code16(KC_LSFT); \
       unregister_code16(__modl); \
     } \
-    break; \
+    return; \
   case __prefix ## _R_COMBO: \
     if (pressed) { \
       register_code16(KC_RSFT); \
@@ -189,7 +189,7 @@ const combo_t key_combos[]
       unregister_code16(KC_RSFT); \
       unregister_code16(__modr); \
     } \
-    break; \
+    return; \
 
 
 #define CASE_MODIFIER_COMBO(__prefix, __modl1, __modl2, __modr1, __modr2) \
@@ -202,7 +202,7 @@ const combo_t key_combos[]
       unregister_code16(__modl1); \
       unregister_code16(__modl2); \
     } \
-    break; \
+    return; \
   case __prefix ## _R_COMBO: \
     if (pressed) { \
       register_code16(__modr1); \
@@ -212,7 +212,7 @@ const combo_t key_combos[]
       unregister_code16(__modr1); \
       unregister_code16(__modr2); \
     } \
-    break; \
+    return; \
   case __prefix ## _SFT_R_COMBO: \
     if (pressed) { \
       register_code16(__modr1); \
@@ -224,7 +224,7 @@ const combo_t key_combos[]
       unregister_code16(__modr2); \
       unregister_code16(KC_RSFT); \
     } \
-    break; \
+    return; \
   case __prefix ## _SFT_L_COMBO: \
     if (pressed) { \
       register_code16(__modl1); \
@@ -236,7 +236,7 @@ const combo_t key_combos[]
       unregister_code16(__modl2); \
       unregister_code16(KC_LSFT); \
     } \
-    break;
+    return;
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
