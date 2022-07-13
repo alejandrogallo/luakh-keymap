@@ -4,6 +4,7 @@ BUILD_DIR ?= build
 QMK_KEYBOARDS = crkbd utu nammu atreus-acris atreus-astar crapple-II
 QMK_TARGETS = $(patsubst %,$(BUILD_DIR)/luakh_rev1_%.hex,$(QMK_KEYBOARDS))
 QMK_DIR = qmk
+QMK_TAG = 0.15.13
 
 DIST_DIR = ./dist
 
@@ -51,6 +52,7 @@ $(QMK_DIR):
 		--shallow-submodules \
 		--recursive \
 		--depth 1 \
+		--b $(QMK_TAG) \
 		https://github.com/qmk/qmk_firmware \
 		$(QMK_DIR)
 
