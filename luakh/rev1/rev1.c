@@ -30,14 +30,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 // COMBOS ================================================================={{{1
 const uint16_t PROGMEM
-    enter_combo[]  = {KC_K, KC_J, COMBO_END}
+    enter_combo[]    = {KC_K, KC_J, COMBO_END}
   , enter_l_combo[]  = {KC_D, KC_F, COMBO_END}
-  , esc_combo[]  = {KC_U, KC_I, COMBO_END}
-  , esc_l_combo[]  = {KC_E, KC_R, COMBO_END}
-  , tab_combo[]  = {KC_M, KC_COMM, COMBO_END}
-  , tab_l_combo[]  = {KC_C, KC_V, COMBO_END}
-  , bspc_combo[]  = {KC_H, KC_J, COMBO_END}
-  , bspc_l_combo[]  = {KC_F, KC_G, COMBO_END}
+  , esc_combo[]      = {KC_U, KC_I, COMBO_END}
+  , esc_l_combo[]    = {KC_E, KC_R, COMBO_END}
+  , tab_combo[]      = {KC_M, KC_COMM, COMBO_END}
+  , tab_l_combo[]    = {KC_C, KC_V, COMBO_END}
+  , bspc_combo[]     = {KC_H, KC_J, COMBO_END}
+  , bspc_l_combo[]   = {KC_F, KC_G, COMBO_END}
 
   , gui_r_combo[]  = {KC_I, KC_O, COMBO_END}
   , gui_l_combo[]  = {KC_W, KC_E, COMBO_END}
@@ -129,7 +129,8 @@ const combo_t key_combos[]
     , [TAB_COMBO] = COMBO(tab_combo,     KC_TAB)
     , [TAB_L_COMBO] = COMBO(tab_l_combo,   KC_TAB)
     , [BSPC_COMBO] = COMBO(bspc_combo,    KC_BSPC)
-    , [BSPC_L_COMBO] = COMBO(bspc_l_combo,  MO(MOVEMENT))
+    , [BSPC_L_COMBO] = COMBO(bspc_l_combo,  KC_BSPC)
+    /*, [BSPC_L_COMBO] = COMBO(bspc_l_combo,  MO(MOVEMENT))*/
 
     // modifiers ==================================
     //
