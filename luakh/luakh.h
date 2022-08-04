@@ -122,7 +122,7 @@ LUAKH_SYMBOLS_2  LCBR, RCBR, QUOT, GRAVE, BSLS, /*|*/ BSPC, 4, 5, 6, EQL
 #define \
 LUAKH_SYMBOLS_3   LBRC, RBRC, LPRN, RPRN, AMPR, /*|*/    0, 1, 2, 3, MINS
 #define \
-LUAKH_SYMBOLS_4             MO_MDFIR, ___, ___, /*|*/ ___, ___, ___
+LUAKH_SYMBOLS_4             LALT, ___, ___, /*|*/ ___, ___, ___
 
 
 // LAYER: MOVEMENT ========================================================{{{1

@@ -64,4 +64,6 @@ clean:
 tags:
 	ctags -R $(QMK_DIR)/quantum $(QMK_DIR)/tmk_core
 
-.PHONY: all link
+flash: dist
+	cd dist && sudo ./flash
+.PHONY: all link flash
