@@ -28,14 +28,14 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Get nix packages
-      run: nix-shell qmk.nix
+      run: nix-shell
 
     - name: Build Keymaps
-      run: nix-shell qmk.nix --run 'make'
+      run: nix-shell --run 'make'
 
     - name: Build dist
       run: |
-        nix-shell qmk.nix --run 'make dist'
+        nix-shell --run 'make dist'
         tar -czf dist.tar.gz dist
 
     - name: Release
