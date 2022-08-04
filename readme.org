@@ -1,5 +1,13 @@
-#+attr_org: :width 50%
+#+attr_org: :width 250px
 #+attr_html: :width 100%
 #+attr_md: :width 100%
 [[file:logo.svg]]
 
+
+This is the repository for the keyboard configuration called luakh, which tries to be a good keymap
+for a wide variety of keyboards for programmers mainly working with vim and emacs using the english
+language as a base language.
+
+In particular, this keymap suppose that the user outsources the foreign language capabilities
+to the operating system at worst and to vim/emacs at best.
+For hebrew and arabic, the developer uses [[https://github.com/alejandrogallo/qwerty-everywhere][qwerty-everywhere]] on emacs and vim.
