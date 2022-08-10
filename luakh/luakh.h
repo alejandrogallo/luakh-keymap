@@ -153,11 +153,11 @@ LUAKH_SYMBOLS_4             LALT, ___, ___, /*|*/ ___, ___, ___
 #define KC_MO_MVMNT MO(MOVEMENT)
 
 #define LUAKH_MOVEMENT_1 \
-                HOME, MB2, PGDN, PGUP, MB1, /*|*/ NO, MB1, MB3, MB2, DEL_SYS
+                HOME, MB2, PGDN, PGUP, MB1, /*|*/ C_ENT, MB1, MB3, MB2, DEL_SYS
 #define LUAKH_MOVEMENT_2 \
                  END, LEFT, DOWN, UP, RGHT, /*|*/ MS_L, MS_D, MS_U, MS_R, INS
 #define LUAKH_MOVEMENT_3 \
-                   _F1, _F2, _F3, _F4, _F5, /*|*/ WHL, WHD, WHU, WHR, CLR
+                   _F1, _F2, _F3, _F4, _F5, /*|*/ WHL, WHD, WHU, WHR, ESC
 #define LUAKH_MOVEMENT_4 \
                       TT_MOV, LSFT, TG_ADJ, /*|*/ LALT, RSFT, RCTL
 
