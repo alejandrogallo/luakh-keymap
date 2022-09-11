@@ -276,7 +276,7 @@ LUAKH_SYMBOLS_4             LALT, ___, ___, /*|*/ ___, ___, ___
 #define LUAKH_SYSTEM_3 \
                 MAC_PLAY, ___, ___, ___, ___, /*|*/  ___, ___, ___, ___, ___
 #define LUAKH_SYSTEM_4 \
-                             ___, ___, ___, /*|*/ MU_P, TG_PLAY, MU_N
+                             POWER, ___, ___, /*|*/ MU_P, TG_PLAY, MU_N
 
 // GENERAL HELPING MACROS ================================================={{{1
 #define LUAKH_GET_NAME(NAME, ROW) \
