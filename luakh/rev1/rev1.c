@@ -39,24 +39,24 @@ const uint16_t PROGMEM
   , bspc_combo[]     = {KC_H, KC_J, COMBO_END}
   , bspc_l_combo[]   = {KC_F, KC_G, COMBO_END}
 
-  , gui_r_combo[]  = {KC_I, KC_O, COMBO_END}
-  , gui_l_combo[]  = {KC_W, KC_E, COMBO_END}
-  , gui_ctl_r_combo[]  = {KC_O, KC_K, COMBO_END}
-  , gui_ctl_l_combo[]  = {KC_W, KC_D, COMBO_END}
-  , gui_ctl_sft_r_combo[]  = {KC_I, KC_L, COMBO_END}
-  , gui_ctl_sft_l_combo[]  = {KC_E, KC_S, COMBO_END}
-  , alt_ctl_r_combo[]      = {KC_COMM, KC_L, COMBO_END}
-  , alt_ctl_l_combo[]      = {KC_S, KC_C, COMBO_END}
-  , alt_ctl_sft_r_combo[]  = {KC_K, KC_DOT, COMBO_END}
-  , alt_ctl_sft_l_combo[]  = {KC_X, KC_D, COMBO_END}
-  , alt_gui_r_combo[]      = {KC_M, KC_K, COMBO_END}
-  , alt_gui_l_combo[]      = {KC_D, KC_V, COMBO_END}
-  , alt_gui_sft_r_combo[]  = {KC_J, KC_COMM, COMBO_END}
-  , alt_gui_sft_l_combo[]  = {KC_C, KC_F, COMBO_END}
-  , ctl_r_combo[]  = {KC_K, KC_L, COMBO_END}
-  , ctl_l_combo[]  = {KC_S, KC_D, COMBO_END}
-  , alt_r_combo[]  = {KC_COMM, KC_DOT, COMBO_END}
-  , alt_l_combo[]  = {KC_X, KC_C, COMBO_END}
+  , gui_r_combo[]         = {KC_I, KC_O, COMBO_END}
+  , gui_l_combo[]         = {KC_W, KC_E, COMBO_END}
+  , gui_ctl_r_combo[]     = {KC_O, KC_K, COMBO_END}
+  , gui_ctl_l_combo[]     = {KC_W, KC_D, COMBO_END}
+  , gui_ctl_sft_r_combo[] = {KC_I, KC_L, COMBO_END}
+  , gui_ctl_sft_l_combo[] = {KC_E, KC_S, COMBO_END}
+  , alt_ctl_r_combo[]     = {KC_COMM, KC_L, COMBO_END}
+  , alt_ctl_l_combo[]     = {KC_S, KC_C, COMBO_END}
+  , alt_ctl_sft_r_combo[] = {KC_K, KC_DOT, COMBO_END}
+  , alt_ctl_sft_l_combo[] = {KC_X, KC_D, COMBO_END}
+  , alt_gui_r_combo[]     = {KC_M, KC_K, COMBO_END}
+  , alt_gui_l_combo[]     = {KC_D, KC_V, COMBO_END}
+  , alt_gui_sft_r_combo[] = {KC_J, KC_COMM, COMBO_END}
+  , alt_gui_sft_l_combo[] = {KC_C, KC_F, COMBO_END}
+  , ctl_r_combo[]         = {KC_K, KC_L, COMBO_END}
+  , ctl_l_combo[]         = {KC_S, KC_D, COMBO_END}
+  , alt_r_combo[]         = {KC_COMM, KC_DOT, COMBO_END}
+  , alt_l_combo[]         = {KC_X, KC_C, COMBO_END}
 
   // shift related combos and modifiers
   , sft_r_combo[]      = {KC_L, KC_SCLN, COMBO_END}
@@ -71,6 +71,13 @@ const uint16_t PROGMEM
   // combos in the numeric layer
   , num_enter_combo[]  = {KC_4, KC_5, COMBO_END}
   , num_tab_combo[]  = {KC_1, KC_2, COMBO_END}
+
+  // Again more accessible ctrl+alt bindings for emacs
+  , alt_ctl_r_2_combo[]     = {KC_Y, KC_U, COMBO_END}
+  , alt_ctl_gui_r_2_combo[] = {KC_Y, KC_U, KC_I, COMBO_END}
+  , alt_ctl_l_2_combo[]     = {KC_T, KC_R, COMBO_END}
+  , alt_ctl_gui_l_2_combo[] = {KC_T, KC_R, KC_E, COMBO_END}
+
   ;
 
 enum MyCombos {
@@ -115,6 +122,11 @@ enum MyCombos {
   , NUM_ENTER_COMBO
   , NUM_TAB_COMBO
 
+  , ALT_CTL_L_2_COMBO
+  , ALT_CTL_GUI_L_2_COMBO
+  , ALT_CTL_R_2_COMBO
+  , ALT_CTL_GUI_R_2_COMBO
+
   , COMBO_LENGTH
 };
 
@@ -124,12 +136,12 @@ const uint16_t COMBO_LEN = COMBO_LENGTH;
 const combo_t key_combos[]
   = { [ENTER_COMBO] = COMBO(enter_combo,   KC_ENT)
     , [ENTER_L_COMBO] = COMBO(enter_l_combo, KC_ENT)
-    , [ESC_COMBO] = COMBO(esc_combo,     KC_ESC)
-    , [ESC_L_COMBO] = COMBO(esc_l_combo,   KC_ESC)
-    , [TAB_COMBO] = COMBO(tab_combo,     KC_TAB)
-    , [TAB_L_COMBO] = COMBO(tab_l_combo,   KC_TAB)
-    , [BSPC_COMBO] = COMBO(bspc_combo,    KC_BSPC)
-    , [BSPC_L_COMBO] = COMBO(bspc_l_combo,  KC_BSPC)
+    , [ESC_COMBO]     = COMBO(esc_combo,     KC_ESC)
+    , [ESC_L_COMBO]   = COMBO(esc_l_combo,   KC_ESC)
+    , [TAB_COMBO]     = COMBO(tab_combo,     KC_TAB)
+    , [TAB_L_COMBO]   = COMBO(tab_l_combo,   KC_TAB)
+    , [BSPC_COMBO]    = COMBO(bspc_combo,    KC_BSPC)
+    , [BSPC_L_COMBO]  = COMBO(bspc_l_combo,  KC_BSPC)
     /*, [BSPC_L_COMBO] = COMBO(bspc_l_combo,  MO(MOVEMENT))*/
 
     // modifiers ==================================
@@ -166,82 +178,117 @@ const combo_t key_combos[]
     , [ALT_GUI_SFT_R_COMBO] = COMBO_ACTION(alt_gui_sft_r_combo)
     , [ALT_GUI_SFT_L_COMBO] = COMBO_ACTION(alt_gui_sft_l_combo)
 
+    , [ALT_CTL_L_2_COMBO]     = COMBO_ACTION(alt_ctl_l_2_combo)
+    , [ALT_CTL_GUI_L_2_COMBO] = COMBO_ACTION(alt_ctl_gui_l_2_combo)
+    , [ALT_CTL_R_2_COMBO]     = COMBO_ACTION(alt_ctl_r_2_combo)
+    , [ALT_CTL_GUI_R_2_COMBO] = COMBO_ACTION(alt_ctl_gui_r_2_combo)
+
     // numpad
     , [NUM_TAB_COMBO] = COMBO(num_tab_combo, KC_TAB)
     , [NUM_ENTER_COMBO] = COMBO(num_enter_combo, KC_ENT)
     };
 
-#define SFT_MODIFIER_COMBO(__prefix, __modl, __modr) \
-  case __prefix ## _L_COMBO: \
-    if (pressed) { \
-      register_code16(KC_LSFT); \
-      register_code16(__modl); \
-    } \
-    else { \
-      unregister_code16(KC_LSFT); \
-      unregister_code16(__modl); \
-    } \
-    return; \
-  case __prefix ## _R_COMBO: \
-    if (pressed) { \
-      register_code16(KC_RSFT); \
-      register_code16(__modr); \
-    } \
-    else { \
-      unregister_code16(KC_RSFT); \
-      unregister_code16(__modr); \
-    } \
-    return; \
+#define CASE_MODIFIERS_2(name, _mod1, _mod2)    \
+  case name:                                    \
+  if (pressed) {                                \
+    register_code16(_mod1);                     \
+    register_code16(_mod2);                     \
+  } else {                                      \
+    unregister_code16(_mod1);                   \
+    unregister_code16(_mod2);                   \
+  }                                             \
+  return;
+
+#define CASE_MODIFIERS_3(name, _mod1, _mod2, _mod3) \
+  case name:                                        \
+  if (pressed) {                                    \
+    register_code16(_mod1);                         \
+    register_code16(_mod2);                         \
+    register_code16(_mod3);                         \
+  } else {                                          \
+    unregister_code16(_mod1);                       \
+    unregister_code16(_mod2);                       \
+    unregister_code16(_mod3);                       \
+  }                                                 \
+  return;
+
+#define SFT_MODIFIER_COMBO(__prefix, __modl, __modr)  \
+  case __prefix ## _L_COMBO:                          \
+  if (pressed) {                                      \
+    register_code16(KC_LSFT);                         \
+    register_code16(__modl);                          \
+  }                                                   \
+  else {                                              \
+    unregister_code16(KC_LSFT);                       \
+    unregister_code16(__modl);                        \
+  }                                                   \
+  return;                                             \
+  case __prefix ## _R_COMBO:                          \
+  if (pressed) {                                      \
+    register_code16(KC_RSFT);                         \
+    register_code16(__modr);                          \
+  }                                                   \
+  else {                                              \
+    unregister_code16(KC_RSFT);                       \
+    unregister_code16(__modr);                        \
+  }                                                   \
+  return;
 
 
 #define CASE_MODIFIER_COMBO(__prefix, __modl1, __modl2, __modr1, __modr2) \
-  case __prefix ## _L_COMBO: \
-    if (pressed) { \
-      register_code16(__modl1); \
-      register_code16(__modl2); \
-    } \
-    else { \
-      unregister_code16(__modl1); \
-      unregister_code16(__modl2); \
-    } \
-    return; \
-  case __prefix ## _R_COMBO: \
-    if (pressed) { \
-      register_code16(__modr1); \
-      register_code16(__modr2); \
-    } \
-    else { \
-      unregister_code16(__modr1); \
-      unregister_code16(__modr2); \
-    } \
-    return; \
-  case __prefix ## _SFT_R_COMBO: \
-    if (pressed) { \
-      register_code16(__modr1); \
-      register_code16(__modr2); \
-      register_code16(KC_RSFT); \
-    } \
-    else  { \
-      unregister_code16(__modr1); \
-      unregister_code16(__modr2); \
-      unregister_code16(KC_RSFT); \
-    } \
-    return; \
-  case __prefix ## _SFT_L_COMBO: \
-    if (pressed) { \
-      register_code16(__modl1); \
-      register_code16(__modl2); \
-      register_code16(KC_LSFT); \
-    } \
-    else  { \
-      unregister_code16(__modl1); \
-      unregister_code16(__modl2); \
-      unregister_code16(KC_LSFT); \
-    } \
-    return;
+  case __prefix ## _L_COMBO:                                            \
+  if (pressed) {                                                        \
+    register_code16(__modl1);                                           \
+    register_code16(__modl2);                                           \
+  }                                                                     \
+  else {                                                                \
+    unregister_code16(__modl1);                                         \
+    unregister_code16(__modl2);                                         \
+  }                                                                     \
+  return;                                                               \
+  case __prefix ## _R_COMBO:                                            \
+  if (pressed) {                                                        \
+    register_code16(__modr1);                                           \
+    register_code16(__modr2);                                           \
+  }                                                                     \
+  else {                                                                \
+    unregister_code16(__modr1);                                         \
+    unregister_code16(__modr2);                                         \
+  }                                                                     \
+  return;                                                               \
+  case __prefix ## _SFT_R_COMBO:                                        \
+  if (pressed) {                                                        \
+    register_code16(__modr1);                                           \
+    register_code16(__modr2);                                           \
+    register_code16(KC_RSFT);                                           \
+  }                                                                     \
+  else  {                                                               \
+    unregister_code16(__modr1);                                         \
+    unregister_code16(__modr2);                                         \
+    unregister_code16(KC_RSFT);                                         \
+  }                                                                     \
+  return;                                                               \
+  case __prefix ## _SFT_L_COMBO:                                        \
+  if (pressed) {                                                        \
+    register_code16(__modl1);                                           \
+    register_code16(__modl2);                                           \
+    register_code16(KC_LSFT);                                           \
+  }                                                                     \
+  else  {                                                               \
+    unregister_code16(__modl1);                                         \
+    unregister_code16(__modl2);                                         \
+    unregister_code16(KC_LSFT);                                         \
+  }                                                                     \
+  return;
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
+
+
+    CASE_MODIFIERS_2(ALT_CTL_L_2_COMBO    , KC_LCTL, KC_LALT)
+    CASE_MODIFIERS_2(ALT_CTL_R_2_COMBO    , KC_RCTL, KC_RALT)
+    CASE_MODIFIERS_3(ALT_CTL_GUI_L_2_COMBO, KC_LCTL, KC_LALT, KC_LGUI)
+    CASE_MODIFIERS_3(ALT_CTL_GUI_R_2_COMBO, KC_RCTL, KC_RALT, KC_RGUI)
 
     // two modifiers + (two modifiers | shift)
     CASE_MODIFIER_COMBO(GUI_CTL, KC_LCTL, KC_LGUI, KC_RCTL, KC_RGUI)
@@ -256,5 +303,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
   }
 }
 
+#undef CASE_MODIFIERS_2
+#undef CASE_MODIFIERS_3
 #undef SFT_MODIFIER_COMBO
 #undef CASE_MODIFIER_COMBO

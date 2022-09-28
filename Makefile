@@ -61,8 +61,9 @@ clean:
 	-$(MAKE) -C $(QMK_DIR) clean
 	-rm $(QMK_DIR)/*.hex
 
-tags:
+tags TAGS:
 	ctags -R $(QMK_DIR)/quantum $(QMK_DIR)/tmk_core
+	ctags -eR $(QMK_DIR)/quantum $(QMK_DIR)/tmk_core
 
 flash: dist
 	cd dist && sudo ./flash
