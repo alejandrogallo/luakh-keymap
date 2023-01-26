@@ -5,16 +5,16 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LUAKH_kc(QWERTY,
-                        WWW_BACK,          WWW_FORWARD,
-                     RST, MENU, NO,          NO, NO, NO),
+                             DEL,          CUT,
+      RST, WWW_BACK, WWW_FORWARD,          VOLU, VOLD, MUTE),
 
   [SYMBOLS] = LUAKH_kc(SYMBOLS,
                                NO,          NO,
-                      RST, NO, NO,          NO, NO, NO),
+                      DEL, INS, NO,          NO, NO, NO),
 
   [MOVEMENT] = LUAKH_kc(MOVEMENT,
                               DEL,          NO,
-                      RST, NO, NO,          NO, NO, NO),
+                    DEL, INS, CUT,          NO, NO, NO),
 
   [ADJUST] = LUAKH_kc(ADJUST,
                                NO,          NO,
