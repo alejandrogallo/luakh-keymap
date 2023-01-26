@@ -1,3 +1,4 @@
+#+options: toc:nil
 #+attr_org: :width 250px
 #+attr_html: :width 100%
 #+attr_md: :width 100%
@@ -11,3 +12,44 @@ language as a base language.
 In particular, this keymap suppose that the user outsources the foreign language capabilities
 to the operating system at worst and to vim/emacs at best.
 For hebrew and arabic, the developer uses [[https://github.com/alejandrogallo/qwerty-everywhere][qwerty-everywhere]] on emacs and vim.
+
+* Keymap
+
+*** base
+
+| Q | W | E | R        | T     |      |   |       | Y       | U       | I | O | P |
+| A | S | D | F        | G     |      |   |       | H       | J       | K | L | ; |
+| A | X | C | V        | B     |      |   |       | N       | M       | , | . | / |
+|   |   |   | [[*Movement][Movement]] | shift | ctrl |   | space | [[*Symbols][Symbols]] | windows |   |   |   |
+
+*** Symbols
+
+| EXLM | AT   | HASH | DOLLAR | PIPE  |      |   |       | ENT     |       7 | 8 | 9 | DOT  |
+| LCBR | RCBR | QUOT | GRAVE  | BSLS  |      |   |       | BSPC    |       4 | 5 | 6 | EQL  |
+| LBRC | RBRC | LPRN | RPRN   | AMPR  |      |   |       | 0       |       1 | 2 | 3 | MINS |
+|      |      |      | LALT   | shift | ctrl |   | space | symbols | windows |   |   |      |
+
+*** Movement
+
+| HOME | MB2  | PGDN | PGUP   | MB1  |        |   |      | NO   | MB1  | MB3  | MB2  | DEL_SYS |
+| END  | LEFT | DOWN | UP     | RGHT |        |   |      | MS_L | MS_D | MS_U | MS_R | INS     |
+| F1   | F2   | F3   | F4     | F5   |        |   |      | WHL  | WHD  | WHU  | WHR  | CLR     |
+|      |      |      | TT_MOV | LSFT | TG_ADJ |   | LALT | RSFT | RCTL |      |      |         |
+
+*** Combos
+
+On the left side of the keyboard there are these combos, and they are
+mirrored on the right side.
+
+| combo | what       |
+|-------+------------|
+| u i   | esc        |
+| j k   | enter      |
+| m ,   | tab        |
+| h j   | backspace  |
+|-------+------------|
+| i o   | windows    |
+| k l   | ctrl       |
+| , .   | alt        |
+| y u   | alt + ctrl |
+|-------+------------|
